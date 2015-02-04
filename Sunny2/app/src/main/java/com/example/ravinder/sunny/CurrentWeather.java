@@ -52,8 +52,8 @@ public class CurrentWeather {
         this.time = time;
     }
 
-    public double getTemperature() {
-        return temperature;
+    public int getTemperature() {
+        return (int) Math.round(temperature);
     }
 
     public void setTemperature(double temperature) {

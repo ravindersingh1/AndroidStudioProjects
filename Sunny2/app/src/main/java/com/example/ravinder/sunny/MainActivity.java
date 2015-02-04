@@ -28,17 +28,23 @@ public class MainActivity extends ActionBarActivity {
     public static final String TAG = MainActivity.class.getSimpleName();
     private  CurrentWeather currentWeather;
     private TextView temperatureLabel ;
+    private TextView timeLabel;
+    private TextView humidityLabel;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         temperatureLabel = (TextView)(findViewById(R.id.temperatureLabel));
+        timeLabel = ( TextView)(findViewById(R.id.timeLabel));
+        humidityLabel = (TextView)(findViewById(R.id.humidityLabel));
 
 
         String apiKey = "b25a894cd2801e85ad70d6da465e2f3f";
-        double latitude = 37.8267;
-        double longitude =  -122.423;
+        double latitude = 37.3544;
+        double longitude =  -121.9692;
 
         String forecastUrl = "https://api.forecast.io/forecast/" + apiKey +
                 "/" + latitude + "," + longitude;
@@ -99,6 +105,8 @@ public class MainActivity extends ActionBarActivity {
 
     private void updateDisplay() {
         temperatureLabel.setText(currentWeather.getTemperature() + "");
+        timeLabel.setText("At " + currentWeather.getFormattedTime()+ "");
+        humidityLabel.setText("Humidity " + currentWeather.getHumidity() + "");
 
     }
 
