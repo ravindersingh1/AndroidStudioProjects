@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Mortgage Calculator</string>
+    <string name="hello_world">Mortgage Calculator</string>
+    <string name="action_settings">Settings</string>
+    <string name="seven_years">7 Years</string>
+    <string name="fifteen_years">15 Years</string>
+    <string name="thirty_years">30 Years</string>
+    <string name="taxes_insurance">Taxes and Insurance Included</string>
+    <string name="calculate">Calculate Monthly Payments</string>
+    <string name="enter_amount">Enter Amount You Want To Borrow</string>
+    <string name="select_interest">Select Interest Rate Below</string>
+    <string name="radioButton">Select Loan Term</string>
+</resources>
