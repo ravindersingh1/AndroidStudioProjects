@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.squareup.okhttp.Call;
@@ -26,11 +27,14 @@ public class MainActivity extends ActionBarActivity {
 
     public static final String TAG = MainActivity.class.getSimpleName();
     private  CurrentWeather currentWeather;
-
+    private TextView temperatureLabel ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        temperatureLabel = (TextView)(findViewById(R.id.temperatureLabel));
+
 
         String apiKey = "b25a894cd2801e85ad70d6da465e2f3f";
         double latitude = 37.8267;
@@ -61,6 +65,12 @@ public class MainActivity extends ActionBarActivity {
                         Log.v(TAG, jsonData);
                         if (response.isSuccessful()) {
                             currentWeather = getCurrentDetails(jsonData);
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    updateDisplay();
+                                }
+                            });
 
                         } else {
 
@@ -84,6 +94,11 @@ public class MainActivity extends ActionBarActivity {
             Toast.makeText(this,"Network is unavailable",Toast.LENGTH_LONG)
                     .show();
         }
+
+    }
+
+    private void updateDisplay() {
+        temperatureLabel.setText(currentWeather.getTemperature() + "");
 
     }
 
