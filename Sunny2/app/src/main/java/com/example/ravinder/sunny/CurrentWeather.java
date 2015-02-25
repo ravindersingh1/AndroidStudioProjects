@@ -12,6 +12,11 @@ public class CurrentWeather {
     private String icon;
     private long time;
     private double temperature;
+    private double humidity;
+    private double percipChance;
+    private String summary;
+    private String timeZone;
+
 
     public String getTimeZone() {
         return timeZone;
@@ -20,11 +25,6 @@ public class CurrentWeather {
     public void setTimeZone(String timeZone) {
         this.timeZone = timeZone;
     }
-
-    private double humidity;
-    private double percipChance;
-    private String summary;
-    private String timeZone;
 
     public String getIcon() {
         return icon;
@@ -46,7 +46,6 @@ public class CurrentWeather {
         String timeString = formatter.format(dateTime);
         return timeString;
     }
-
 
     public void setTime(long time) {
         this.time = time;
@@ -83,7 +82,5 @@ public class CurrentWeather {
     public void setSummary(String summary) {
         this.summary = summary;
     }
-
-
 
 }

@@ -12,7 +12,7 @@
         android:id="@+id/temperatureLabel"
         android:textColor="#ffffffff"
         android:textSize="100sp"
-        android:text="100"
+        android:text="66"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
 
@@ -20,10 +20,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Santa Clara"
-        android:id="@+id/textView"
+        android:id="@+id/city"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:textSize="60sp" />
+        android:textSize="40sp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -42,9 +42,75 @@
         android:text="Humidity"
         android:id="@+id/humidityLabel"
         android:layout_below="@+id/temperatureLabel"
-        android:layout_alignRight="@+id/textView2"
-        android:layout_alignEnd="@+id/textView2"
+        android:layout_alignRight="@+id/humidityLabel"
+        android:layout_alignEnd="@+id/humidityLabel"
         android:textSize="20dp"
         android:paddingLeft="30dp"
         android:paddingRight="30dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nice and clear weather with no rain"
+        android:id="@+id/summaryLabel"
+        android:textAlignment="center"
+        android:singleLine="false"
+        android:textSize="17dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageButton"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/city"
+        android:src="@drawable/refresh1"
+        android:longClickable="false"
+        android:backgroundTint="#ffc6ff6d"
+        android:background="#ffc6ff6d" />
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressBar"
+        android:layout_alignBottom="@+id/imageButton"
+        android:layout_alignRight="@+id/imageButton"
+        android:layout_alignEnd="@+id/summaryLabel"
+        android:layout_alignParentTop="false"
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentBottom="false"
+        android:layout_alignTop="@+id/imageButton"
+        android:layout_below="@+id/imageButton"
+        android:layout_alignLeft="@+id/imageButton"
+        android:layout_toRightOf="@+id/imageButton"
+        android:layout_above="@+id/imageButton"
+        android:layout_toLeftOf="@+id/imageButton"
+        android:layout_alignBaseline="@+id/imageButton" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/degree"
+        android:longClickable="false"
+        android:src="@drawable/degree"
+        android:maxHeight="15dp"
+        android:maxWidth="13dp"
+        android:layout_toRightOf="@+id/imageButton"
+        android:layout_alignBottom="@+id/temperatureLabel"
+        android:layout_alignRight="@+id/timeLabel"
+        android:layout_alignEnd="@+id/timeLabel"
+        android:layout_alignParentEnd="false"
+        android:layout_alignTop="@+id/temperatureLabel" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Small Text"
+        android:id="@+id/percipChance"
+        android:layout_above="@+id/summaryLabel"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="48dp" />
+
 </RelativeLayout>
